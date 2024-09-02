@@ -1,0 +1,15 @@
+.information {
+    width: 100%;
+}
+
+.time {
+    text-align: right;
+}
+
+.line {
+    width: 10em;
+}
+
+.container {
+    height: 3em;
+}
