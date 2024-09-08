@@ -10,6 +10,10 @@
 
 :root {
     font-family: "Departure Mono";
+    --lavender-web: #d8d8f6ff;
+    --rose-quartz: #978897ff;
+    --davys-gray: #494850ff;
+    --raisin-black: #2c2c34ff;
 }
 
 .information {
