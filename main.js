@@ -1,18 +1,13 @@
-function format(infos){
+function formatInfos(infos){
     let output = []
     for (let i = 0; i < infos.length; i++) {
         const info = infos[i];
-        // console.log('=====')
-        // console.log(info.direction || info.provenance);
-        // console.log(info.line.name);
-        // const time = new Date(info.plannedWhen)
-        // console.log(time.getHours() + ':' + time.getMinutes());
-        output.push(formatInfo(info));
+        output.push(formatBody(info));
     }
     return output;
 }
 
-function formatInfo(info){
+function formatBody(info){
     const container = document.createElement("tr")
     const lineName = document.createElement("td")
     const destination = document.createElement("td")
@@ -37,10 +32,6 @@ async function getDepartures(id, params) {
     return (await queryStops("departures", id, params)).departures
 }
 
-async function getArrivals(id, params) {
-    return (await queryStops("arrivals", id, params)).arrivals
-}
-
 async function queryStops(type, id, params) {
     const urlSearchParams = new URLSearchParams(params);
     const url = `https://v6.db.transport.rest/stops/${id}/${type}?` + urlSearchParams.toString();
@@ -54,8 +45,7 @@ async function queryStops(type, id, params) {
 }
 
 (async () => {
-    const departBody = document.querySelector("#departTable")
-    const arriveBody = document.querySelector("#arriveTable")
+    const body = document.querySelector("#departTable");
     const id = 8010338;
     const params = {
         duration: 600,
@@ -63,15 +53,7 @@ async function queryStops(type, id, params) {
         linesOfStops: false,
         remarks: true,
     };
-    const addParams = structuredClone(params);
-    addParams.direction = "325719";
-    let departures = format(await getDepartures(id, params));
-    // let departSep = document.createElement("h2")
-    // departSep.innerText = "Departures"
-    let arrivals = format(await getArrivals(id, addParams))
-    // let arrivalSep = document.createElement("h2")
-    // arrivalSep.innerText = "Arrivals"
-    departBody.replaceChildren(...departures)
-    arriveBody.replaceChildren(...arrivals)
+    let departures = formatInfos(await getDepartures(id, params));
+    body.replaceChildren(...departures)
 })();
 
