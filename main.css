@@ -9,25 +9,77 @@
 }
 
 :root {
-    font-family: "Departure Mono";
-    --lavender-web: #d8d8f6ff;
-    --rose-quartz: #978897ff;
-    --davys-gray: #494850ff;
-    --raisin-black: #2c2c34ff;
+    font-family: "Departure Mono", serif;
+
+    --foreground-color: black;
+    --background-color: #5e7b6f;
+    --font-size: 12pt;
+
+    color: var(--foreground-color);
+    background-color: var(--background-color);
+    font-size: var(--font-size);
+}
+
+table {
+    border-collapse: collapse;
 }
 
 .information {
     width: 100%;
+    text-align: left;
+
+    tr td, tr th {
+        vertical-align: top;
+        line-height: 1.5;
+        padding: .5em;
+    }
+    tr td {
+        height: calc(2 * 1.5 * 1em);
+    }
 }
 
 .time {
-    text-align: right;
+    text-align: left;
+    width: 1em;
+
+    .actual {
+        font-weight: bold;
+    }
+    .planned, .delay {
+        font-size: 75%;
+    }
+    .delay {
+        color: red;
+        font-weight: bold;
+        background-color: var(--foreground-color);
+        padding: .5ex;
+    }
+    .delay::before {
+        content: "+"
+    }
+}
+
+td.time {
+    background-color: var(--foreground-color);
+    color: var(--background-color);
 }
 
 .line {
-    width: 10em;
+    width: 10ex;
+    text-align: left;
 }
 
-.container {
-    height: 3em;
+.direction {
+    width: auto;
+    text-align: left;
+}
+
+.platform {
+    width: 3em;
+    text-align: right;
+}
+
+.cancelled .line, .cancelled .direction {
+    text-decoration: line-through;
+    color: red;
 }
