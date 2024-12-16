@@ -27,22 +27,22 @@ function formatBody(info){
     return container
 }
 
-
-async function getDepartures(id, params) {
-    return (await queryStops("departures", id, params)).departures
-}
-
-async function queryStops(type, id, params) {
-    const urlSearchParams = new URLSearchParams(params);
-    const url = `https://v6.db.transport.rest/stops/${id}/${type}?` + urlSearchParams.toString();
-    // duration=600&results=20&linesOfStops=false&remarks=true"
-    const response = await fetch(url);
-    if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
-    }
-
-    return await response.json();
-}
+//
+// async function getDepartures(id, params) {
+//     return (await queryStops("departures", id, params)).departures
+// }
+//
+// async function queryStops(type, id, params) {
+//     const urlSearchParams = new URLSearchParams(params);
+//     const url = `https://v6.db.transport.rest/stops/${id}/${type}?` + urlSearchParams.toString();
+//     duration=600&results=20&linesOfStops=false&remarks=true"
+//     const response = await fetch(url);
+//     if (!response.ok) {
+//         throw new Error(`Error: ${response.status}`);
+//     }
+//
+//     return await response.json();
+// }
 
 (async () => {
     const body = document.querySelector("#departTable");
