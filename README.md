@@ -1,8 +1,14 @@
 # TransportChamp
 
 ----------------
-Repo for a very rudimentary website to display current
-information about local transport for the hackerspace Port39
+Repo for website to display current
+information about local transport for the Hackerspace Port39
 
-Using Apache2 for the server itself, planned to run on a
-Raspberry Pi
+Currently supported methods of transport supported are:
+1. RE
+2. ICE
+3. IC
+4. BUS
+5. RUF
+
+Major thanks to [Varbin](https://github.com/Varbin) who co-authored a lot of this
