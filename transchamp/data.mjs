@@ -1,6 +1,15 @@
-
+/**
+ * A list of all our known stations
+ *
+ * @enum {number}
+ */
+export const Stations = {
+    Greifswald: 8010139,
+    Stralsund: 8010338
+}
 
 /**
+ * All known methods of transport available from departing connections
  *
  * @enum {string}
  */
@@ -39,6 +48,8 @@ export class Connection {
 }
 
 /**
+ * All known remark strings that aren't null
+ *
  * @enum {string}
  */
 export const RemarkCode = {
@@ -64,10 +75,3 @@ export class Remark {
         return remarks.some((remark) => remark.code === RemarkCode.Cancelled)
     }
 }
-
-// arrival
-// departure
-// delay
-// richtung (ort)
-// linie          -> departures.Object.line.name
-// verkehrsmittel -> departures.Object.line.productName

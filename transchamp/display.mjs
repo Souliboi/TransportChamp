@@ -1,4 +1,3 @@
-
 import {Connection, Remark} from "./data.mjs";
 
 /**
@@ -71,7 +70,7 @@ function formatDeparture(actual, planned, delay) {
 
 /**
  *
- * @param {Remark[]}remarks
+ * @param {Remark[]} remarks
  */
 function formatRemarks(remarks) {
     if (!remarks.length) {
@@ -106,6 +105,7 @@ function formatConnectionAsRow(connection){
 }
 
 /**
+ *
  * @param {Connection[]} connections
  * @return {HTMLTableElement}
  */
