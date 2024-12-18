@@ -5,7 +5,10 @@
  */
 export const Stations = {
     Greifswald: 8010139,
-    Stralsund: 8010338
+    Stralsund: 8010338,
+    Ruegendamm: 8013062,
+    Ozeaneum: 325666,
+    Wasserstrasse: 325719
 }
 
 /**
