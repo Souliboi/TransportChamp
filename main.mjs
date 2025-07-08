@@ -11,8 +11,8 @@ import {Stations} from "./transchamp/data.mjs";
 async function getDepartingConnectionsFromStation(station) {
     document.querySelector("body").replaceChildren(formatConnections(await getDepartingConnections(
             station, {
-            duration: 600,
-            results: 10,
+            duration: 60,
+            results: 15,
             linesOfStops: false,
             remarks: true,
         })));

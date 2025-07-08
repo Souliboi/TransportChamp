@@ -33,36 +33,44 @@ table {
         line-height: 1.5;
         padding: .5em;
     }
-    tr td {
-        height: calc(2 * 1.5 * 1em);
+    tr {
+        overflow: hidden;
+        height: calc(1.5 * 1em);
+        /*white-space: nowrap;*/
     }
+}
+
+.indicator {
+    width: 2em;
+    text-align: center;
+}
+
+.actual {
+    font-weight: bold;
+    background-color: var(--foreground-color);
+    color: var(--background-color);
 }
 
 .time {
     text-align: left;
     width: 1em;
-
-    .actual {
-        font-weight: bold;
-    }
-    .planned, .delay {
-        font-size: 75%;
-    }
-    .delay {
-        color: red;
-        font-weight: bold;
-        background-color: var(--foreground-color);
-        padding: .5ex;
-    }
-    .delay::before {
-        content: "+"
-    }
 }
 
-td.time {
+.delay {
+    color: red;
+    font-weight: bold;
     background-color: var(--foreground-color);
-    color: var(--background-color);
+    margin-left: 1ex;
 }
+.delay::before {
+    content: "+"
+}
+
+/*
+td.time {
+
+}
+*/
 
 .line {
     width: 10ex;
@@ -74,8 +82,12 @@ td.time {
     text-align: left;
 }
 
+.via {
+    text-align: left;
+}
+
 .platform {
-    width: 3em;
+    width: 4em;
     text-align: right;
 }
 
