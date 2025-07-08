@@ -9,25 +9,89 @@
 }
 
 :root {
-    font-family: "Departure Mono";
-    --lavender-web: #d8d8f6ff;
-    --rose-quartz: #978897ff;
-    --davys-gray: #494850ff;
-    --raisin-black: #2c2c34ff;
+    font-family: "Departure Mono", serif;
+
+    --foreground-color: black;
+    --background-color: #5e7b6f;
+    --font-size: 12pt;
+
+    color: var(--foreground-color);
+    background-color: var(--background-color);
+    font-size: var(--font-size);
+}
+
+table {
+    border-collapse: collapse;
 }
 
 .information {
     width: 100%;
+    text-align: left;
+
+    tr td, tr th {
+        vertical-align: top;
+        line-height: 1.5;
+        padding: .5em;
+    }
+    tr {
+        overflow: hidden;
+        height: calc(1.5 * 1em);
+        /*white-space: nowrap;*/
+    }
+}
+
+.indicator {
+    width: 2em;
+    text-align: center;
+}
+
+.actual {
+    font-weight: bold;
+    background-color: var(--foreground-color);
+    color: var(--background-color);
 }
 
 .time {
+    text-align: left;
+    width: 1em;
+}
+
+.delay {
+    color: red;
+    font-weight: bold;
+    background-color: var(--foreground-color);
+    margin-left: 1ex;
+}
+.delay::before {
+    content: "+"
+}
+
+/*
+td.time {
+
+}
+*/
+
+.line {
+    width: 10ex;
+    text-align: left;
+}
+
+.direction {
+    width: auto;
+    text-align: left;
+}
+
+.via {
+    text-align: left;
+}
+
+.platform {
+    width: 4em;
     text-align: right;
 }
 
-.line {
-    width: 10em;
-}
-
-.container {
-    height: 3em;
+.cancelled .line, .cancelled .direction {
+    text-decoration: line-through;
+    color: red;
 }
